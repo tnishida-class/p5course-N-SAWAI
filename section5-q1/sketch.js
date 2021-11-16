@@ -5,17 +5,28 @@ function setup(){
   createCanvas(windowWidth, windowHeight);
   //createCanvas(400, 400);
   background(255);
-  balloon("I love keyakizaka46");
+  balloon("I love keyakizaka46",random(10,windowWidth-120 && windowHeight-120),random(10,windowWidth-120 && windowHeight-120));
 }
-function balloon(t){
-let a =  random(10,windowWidth-120 && windowHeight-120)
+
+function balloon(t,a,b){
  noStroke()
  fill(221,226,235);
- square(a,a,120,5);
+ square(a,b,120,5);
  fill(123,23,231);
- text(t,a+3,a+60);
+ text(t,a+3,b+60);
  fill(221,226,235);
- triangle(a+117, a+120, a+117, a+100, a+137, a+120);
+ triangle(a+117, b+120, a+117, b+100, a+137, b+120);
+
+//第1版
+//function balloon(t){
+//let a =  random(10,windowWidth-120 && windowHeight-120)
+ //noStroke()
+ //fill(221,226,235);
+ //square(a,a,120,5);
+ //fill(123,23,231);
+ //text(t,a+3,a+60);
+ //fill(221,226,235);
+ //triangle(a+117, a+120, a+117, a+100, a+137, a+120);
 // 以下ひな壇
 //function balloon(t){
   //let w = textWidth(t);
