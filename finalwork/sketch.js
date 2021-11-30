@@ -15,6 +15,7 @@ function setup(){
 createCanvas(1000,1000);
 catched = false;
 notcatched = true;
+x = -800
 for(let z = 0; z<1000 ; z = z + 10)
 guidelines(z,0,1000)
 //初期設定として以下4行
@@ -71,8 +72,6 @@ for(let i = 0; i < por.length; i++){
 const l = por[i];
 image(l.img2, l.dx, l.dy,l.dw,l.dh,l.sx,l.sy,l.sw,l.sh,l.notcatched,l.catched)
 }
-}
-//これより下はクリックしたときに動かせるようにしたい
 function guidelines(a,b,c) { //この行とその下の行でガイドライン（縦線を描画）を作成する自作の関数
 line(a,b,a,c); //縦線
 line(b,a,c,a); //横線
@@ -81,10 +80,24 @@ rect(0,50,1000,20);
 textSize(49);
 textFont("serif");
 text("2020年度　倫理学", 0, 45);
-textSize(20);
-text("Edward Wadie Said                   　　　       Rene Descartes      Aristotle", 30, 68);
-//function draw(){
+//textSize(20);
+//text("Edward Wadie Said                   　　　       Rene Descartes      Aristotle", 30, 68);
+}
+}
+//これより下はクリックしたときに動かせるようにしたい
+
+function draw(){
 //background(247,255,254);
+//rect(x,48,100,20);
+fill(100);
+textSize(23);
+textFont("serif");
+text("Edward Wadie Said    Michel Foucault     Rene Descartes     Aristotle", x, 68);
+ if(keyIsDown(RIGHT_ARROW)){ x += 800; }
+ noStroke();
+ fill(255);
+ rect(800,51,200,18)
+
 //for(let i = 0; i < por.length; i++){
 //if(por[i].notcatched){image(h.img2, h.dx, h.dy,h.dw,h.dh,h.sx,h.sy,h.sw,h.sh,h.notcatched,h.catched)}
   // }
